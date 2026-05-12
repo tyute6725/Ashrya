@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- META -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <!-- TITLE -->
+
+  <title>Available Rooms | Ashrya</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+  />
+
+  <!-- CSS -->
+
+  <style>
+
+    /* =========================
+       GLOBAL RESET
+    ========================== */
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    body{
+      background-color: #fff8f8;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar{
+
+      background-color: #f2545b;
+
+      height: 75px;
+
+      width: 100%;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      padding: 0 15px;
+
+      z-index: 1000;
+
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+    }
+
+    #nav-logo{
+
+      background-image: url("images/Logo.png");
+
+      height: 50px;
+
+      width: 150px;
+
+      background-size: cover;
+
+      background-repeat: no-repeat;
+
+      background-position: center;
+    }
+
+    #nav-search{
+
+      display: flex;
+
+      justify-content: center;
+
+      flex: 1;
+    }
+
+    #nav-search input{
+
+      width: 25rem;
+
+      height: 42px;
+
+      border: none;
+
+      outline: none;
+
+      border-radius: 50px;
+
+      text-align: center;
+
+      background-color: rgb(255,188,222);
+    }
+
+    #nav-search input::placeholder{
+
+      color: white;
+
+      font-weight: bold;
+    }
+
+    .nav-buttons{
+
+      display: flex;
+
+      gap: 10px;
+    }
+
+    .btn{
+
+      text-decoration: none;
+
+      color: white;
+
+      padding: 10px 18px;
+
+      border-radius: 50px;
+
+      font-weight: bold;
+
+      transition: .4s;
+    }
+
+    .btn:hover{
+
+      background-color: rgb(48, 8, 169);
+    }
+
+    /* =========================
+       ROOM SECTION
+    ========================== */
+
+    .rooms-section{
+
+      padding: 7rem 2rem 3rem;
+    }
+
+    .section-title{
+
+      text-align: center;
+
+      font-size: 2.5rem;
+
+      color: #f2545b;
+
+      margin-bottom: 3rem;
+
+      font-family: "Poppins", sans-serif;
+    }
+
+    .room-container{
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 2rem;
+
+      max-width: 1200px;
+
+      margin: auto;
+    }
+
+    /* =========================
+       ROOM CARD
+    ========================== */
+
+    .room-card{
+
+      background-color: white;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.12);
+
+      transition: .4s;
+    }
+
+    .room-card:hover{
+
+      transform: translateY(-10px);
+
+      box-shadow: 0px 10px 25px rgba(242,84,91,0.25);
+    }
+
+    .room-card img{
+
+      width: 100%;
+
+      height: 220px;
+
+      object-fit: cover;
+    }
+
+    .room-content{
+
+      padding: 1.4rem;
+    }
+
+    .room-content h2{
+
+      color: #222;
+
+      font-size: 1.35rem;
+
+      margin-bottom: .5rem;
+
+      font-family: "Poppins", sans-serif;
+    }
+
+    .location{
+
+      color: #f2545b;
+
+      font-weight: 600;
+
+      margin-bottom: .8rem;
+    }
+
+    .room-content p{
+
+      color: #666;
+
+      line-height: 1.7;
+    }
+
+    .features{
+
+      margin-top: 1rem;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .feature{
+
+      background-color: rgb(255,230,236);
+
+      color: #f2545b;
+
+      padding: .45rem .8rem;
+
+      border-radius: 50px;
+
+      font-size: .85rem;
+
+      font-weight: 500;
+    }
+
+    .price{
+
+      margin-top: 1rem;
+
+      font-size: 1.2rem;
+
+      font-weight: bold;
+
+      color: #8a4fff;
+    }
+
+    .view-btn{
+
+      width: 100%;
+
+      margin-top: 1rem;
+
+      height: 48px;
+
+      border: none;
+
+      border-radius: 50px;
+
+      background-color: #f2545b;
+
+      color: white;
+
+      font-size: 1rem;
+
+      font-weight: 600;
+
+      cursor: pointer;
+
+      transition: .4s;
+    }
+
+    .view-btn:hover{
+
+      background-color: #8a4fff;
+    }
+
+    /* =========================
+       ABOUT SECTION
+    ========================== */
+
+    .about-section{
+
+      max-width: 1000px;
+
+      margin: 3rem auto;
+
+      background-color: white;
+
+      padding: 2rem;
+
+      border-radius: 20px;
+
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.08);
+
+      text-align: center;
+    }
+
+    .about-section h2{
+
+      color: #f2545b;
+
+      margin-bottom: 1rem;
+
+      font-family: "Poppins", sans-serif;
+    }
+
+    .about-section p{
+
+      color: #666;
+
+      line-height: 1.8;
+
+      font-size: 1rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:992px){
+
+      .room-container{
+
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:768px){
+
+      #nav-search input{
+        width: 100%;
+      }
+
+      .room-container{
+
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="navbar">
+
+      <div id="nav-logo"></div>
+
+      <div id="nav-search">
+
+        <input
+          type="text"
+          placeholder="Find Your Dream Room..."
+        >
+
+      </div>
+
+      <div class="nav-buttons">
+
+        <a href="signup2.html" class="btn">
+
+          Register
+
+        </a>
+
+        <a href="login.html" class="btn">
+
+          Login
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- ROOM SECTION -->
+
+  <section class="rooms-section">
+
+    <h1 class="section-title">
+
+      Available Rooms
+
+    </h1>
+
+    <div class="room-container">
+
+      <!-- ROOM 1 -->
+
+      <div class="room-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+          alt="room"
+        >
+
+        <div class="room-content">
+
+          <h2>Modern Student Room</h2>
+
+          <p class="location">
+            📍 Chandmari, Varanasi
+          </p>
+
+          <p>
+            Fully furnished room with attached bathroom and WiFi.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">WiFi</span>
+
+            <span class="feature">Furnished</span>
+
+          </div>
+
+          <div class="price">
+            ₹4500 / Month
+          </div>
+
+          <button class="view-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ROOM 2 -->
+
+      <div class="room-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop"
+          alt="room"
+        >
+
+        <div class="room-content">
+
+          <h2>Cozy Shared Room</h2>
+
+          <p class="location">
+            📍 Pandeypur, Varanasi
+          </p>
+
+          <p>
+            Affordable shared room with peaceful environment.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">Budget</span>
+
+            <span class="feature">Shared</span>
+
+          </div>
+
+          <div class="price">
+            ₹3200 / Month
+          </div>
+
+          <button class="view-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ROOM 3 -->
+
+      <div class="room-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop"
+          alt="room"
+        >
+
+        <div class="room-content">
+
+          <h2>Premium Single Room</h2>
+
+          <p class="location">
+            📍 Lanka, Varanasi
+          </p>
+
+          <p>
+            Stylish room with balcony and modern furniture.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">Balcony</span>
+
+            <span class="feature">Premium</span>
+
+          </div>
+
+          <div class="price">
+            ₹6500 / Month
+          </div>
+
+          <button class="view-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ROOM 4 -->
+
+      <div class="room-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1502672023488-70e25813eb80?q=80&w=1200&auto=format&fit=crop"
+          alt="room"
+        >
+
+        <div class="room-content">
+
+          <h2>Luxury Room</h2>
+
+          <p class="location">
+            📍 Sigra, Varanasi
+          </p>
+
+          <p>
+            Premium room with AC and study table setup.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">AC</span>
+
+            <span class="feature">Luxury</span>
+
+          </div>
+
+          <div class="price">
+            ₹8500 / Month
+          </div>
+
+          <button class="view-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ROOM 5 -->
+
+      <div class="room-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1505692952047-1a78307da8f2?q=80&w=1200&auto=format&fit=crop"
+          alt="room"
+        >
+
+        <div class="room-content">
+
+          <h2>Comfort Room</h2>
+
+          <p class="location">
+            📍 Bhelupur, Varanasi
+          </p>
+
+          <p>
+            Comfortable room with peaceful atmosphere.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">Comfort</span>
+
+            <span class="feature">WiFi</span>
+
+          </div>
+
+          <div class="price">
+            ₹5000 / Month
+          </div>
+
+          <button class="view-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- ROOM 6 -->
+
+      <div class="room-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+          alt="room"
+        >
+
+        <div class="room-content">
+
+          <h2>Student Friendly Room</h2>
+
+          <p class="location">
+            📍 BHU Gate, Varanasi
+          </p>
+
+          <p>
+            Budget room specially designed for students.
+          </p>
+
+          <div class="features">
+
+            <span class="feature">Students</span>
+
+            <span class="feature">Nearby Market</span>
+
+          </div>
+
+          <div class="price">
+            ₹3800 / Month
+          </div>
+
+          <button class="view-btn">
+            View Details
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+
+  <section class="about-section">
+
+    <h2>
+
+      About Ashrya
+
+    </h2>
+
+    <p>
+
+      Ashrya helps students and working professionals
+      find comfortable and affordable rooms easily.
+      Our goal is to make room searching simple,
+      fast and reliable for everyone.
+
+    </p>
+
+  </section>
+
+</body>
+</html>

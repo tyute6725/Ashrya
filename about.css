@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+/* =====================================================
+   BODY BACKGROUND
+===================================================== */
+body {
+  background-color: white;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.navbar {
+  background-color: #f2545b;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0 15px;
+  z-index: 1000;
+
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#nav-logo {
+  background-image: url("images/Logo.png");
+  background-color: transparent;
+  height: 50px;
+  width: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#nav-logo:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* =====================================================
+   SEARCH BAR
+===================================================== */
+#nav-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+#nav-search input {
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(255, 188, 222);
+  width: 25rem;
+  height: 40px;
+  text-align: center;
+  outline: none;
+}
+
+#nav-search input:hover {
+  background-color: rgb(201, 92, 251);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#nav-search input::placeholder {
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+
+/* =====================================================
+   LOGIN BUTTONS
+===================================================== */
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-right: 20px;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50px;
+  border: none;
+  height: 40px;
+  padding: 10px 15px;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(48, 8, 169);
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero {
+
+ background-color: #ffeaea;
+  height: 350px;
+  width: 100%;
+  margin-top: 75px; /* navbar space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#hero-container{
+   background-color:#f2545b;
+  box-shadow: 2px 2px 5px white;
+  border-radius: 30px;
+  padding: 10px 12px;
+  transition: .7s;
+}
+#hero-container:hover{
+  opacity: 6;
+  transform: scale(1.1);
+  transition: .7s ease-in-out ;
+}
+
+#hero-container h1 {
+  font-size: 4rem;
+  font-weight: bold;
+ 
+}
+
+#hero-container p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* =====================================================
+   ABOUT SECTION
+===================================================== */
+#about {
+  width: 100%;
+  padding: 50px 40px;
+  background-color: white;
+  color: black;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-text {
+  width: 55%;
+  color: black;
+}
+
+.about-text h2 {
+  font-size: 35px;
+  color: #f2545b;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.about-text p {
+  color: black;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.about-img {
+  width: 30%;
+  margin-right: 60px;
+  position: relative;
+
+
+}
+#logo2{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  
+
+}
+
+#logo3 {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   WHY CHOOSE US SECTION
+===================================================== */
+#why {
+  padding: 50px 30px;
+  text-align: center;
+  background: #ffeaea;
+}
+
+#why h2 {
+  font-size: 35px;
+  color: #f2545b;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.why-box {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.why-card {
+  background-color: #f2545b;
+  width: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.why-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 16px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  background-color: #f2545b;
+  text-align: center;
+  padding: 18px;
+  color: white;
+  margin-top: 40px;
+  font-size: 16px;
+}
